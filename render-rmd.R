@@ -10,4 +10,7 @@ library(rmarkdown)
 
 # render("surveys-report.Rmd", output_dir = "reports")
 
-render("surveys-report.Rmd", output_dir = "reports", params = list(file = "data/plot1.csv"))
+# render("surveys-report.Rmd", output_dir = "reports", params = list(file = "data/plot1.csv"))
+
+file_names = commandArgs(trailingOnly = TRUE)
+render("surveys-report.Rmd", output_dir = "reports", params = list(file = file_names))
